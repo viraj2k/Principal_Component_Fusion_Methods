@@ -1,0 +1,23 @@
+function [spfcmpcaf spc]=spfcmpcafn(a,b,nc);
+% a=double(a);
+% b=double(b);
+[x y]=size(a);
+% nc=4;
+[ac]=spfcm(a,nc);
+[bc]=spfcm(b,nc);
+acf=asortcluster(ac,nc);
+bcf=asortcluster(bc,nc);
+m1=0;m2=0;
+fcmfusion=zeros([x y]);
+for i=1:1:nc;
+    % [acf1 acf2 acf3]=sortcluster(ac1,ac2,ac3);
+% [bcf1 bcf2 bcf3]=sortcluster(bc1,bc2,bc3);
+ [cf{i} ca{i}]=fuse_pca(acf{i},bcf{i});
+ fcmfusion=fcmfusion+cf{i};
+ m1=m1+ca{i}(1,1);
+ m2=m2+ca{i}(2,1);
+end
+m1=m1/nc;
+m2=m2/nc;
+spfcmpcaf=m1*a+m2*b;
+spc=[m1;m2];
