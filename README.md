@@ -5,6 +5,7 @@ This folder contains codes for three papers
 2. Vijayarajan R & Muttan S, “Fuzzy C-Means Clustering based Principal component averaging fusion,” International Journal of Fuzzy Systems,Vol.16 (2), 2014, pp.153-159
 3. Vijayarajan R & Muttan S, “Iterative Block Level Principal Component Averaging Medical Image Fusion”, Optik-International Journal of Light and Electron Optics (Elsevier),Vol. 125(17), 2014, pp. 4751-4757
 
+# Important files
 main.m - Main file for fusion methods
 images - dataset from "https://www.med.harvard.edu/aanlib/"
 DWT-PCA - DWT based principal component averaging
